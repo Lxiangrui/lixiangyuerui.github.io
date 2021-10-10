@@ -7,13 +7,13 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <meta name="author" content="John Doe">
+    <meta name="author" content="祥瑞">
 
 
 
 
 
-<title>我的第一篇博客文章 | Hexo</title>
+<title>Hello World | Hexo</title>
 
 
 
@@ -127,29 +127,99 @@
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">我的第一篇博客文章</h1>
+            <h1 class="post-title">Hello World</h1>
             
                 <div class="post-meta">
                     
-                        Author: <a itemprop="author" rel="author" href="/">John Doe</a>
+                        Author: <a itemprop="author" rel="author" href="/">祥瑞</a>
                     
 
                     
                         <span class="post-time">
-                        Date: <a href="#">October 9, 2021&nbsp;&nbsp;20:33:09</a>
+                        Date: <a href="#">October 10, 2021&nbsp;&nbsp;13:44:25</a>
                         </span>
                     
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/blog-first/">blog_first</a>
+                            
+                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            
+            <h1 id="This-is-my-first-blog-Test"><a href="#This-is-my-first-blog-Test" class="headerlink" title="This is my first blog Test"></a>This is my first blog Test</h1><p>  这是我第一次建站，翻遍了B站hexo相关视频，查错误代码，期间还重装了一次系统（可惜后面发现重不重装都<br>  一样😔😔），经过3天终于把网站弄好了，感觉有一种新世界的大门想自己打开，所以希望自己能在这里玩的开心。<br>  今后我会在这里分享自己的一些小项目、学习心得、以及摆龙门阵。</p>
+
         </div>
 
         
@@ -157,13 +227,13 @@
                 
                     <p class="copyright-item">
                         <span>Author:</span>
-                        <span>John Doe</span>
+                        <span>祥瑞</span>
                     </p>
                 
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2021/10/09/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">http://example.com/2021/10/09/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</a></span>
+                        <span><a href="http://example.com/2021/10/10/Hello-World/">http://example.com/2021/10/10/Hello-World/</a></span>
                     </p>
                 
                 
@@ -186,6 +256,10 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
+                    
+                        <a href="/tags/Hello-World/"># Hello World</a>
+                    
+                        
                 </span>
             </div>
             <div>
@@ -197,8 +271,6 @@
         <section class="post-nav">
             
             
-            <a class="next" rel="next" href="/2021/10/09/hello-world/">Hello World</a>
-            
         </section>
 
 
@@ -208,7 +280,7 @@
             </div>
             <footer id="footer" class="footer">
     <div class="copyright">
-        <span>© John Doe | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+        <span>© 祥瑞 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
     </div>
 </footer>
 
